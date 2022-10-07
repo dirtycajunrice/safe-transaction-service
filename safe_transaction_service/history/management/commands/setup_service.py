@@ -497,7 +497,7 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS("Setting up Safe Contract Addresses"))
         ethereum_client = EthereumClientProvider()
-        ethereum_network = ethereum_client.get_network()
+        ethereum_network = ethereum_client.w3.net.version
         if ethereum_network in MASTER_COPIES:
             self.stdout.write(
                 self.style.SUCCESS(f"Setting up {ethereum_network.name} safe addresses")
